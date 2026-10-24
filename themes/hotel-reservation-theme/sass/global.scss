@@ -3540,3 +3540,17 @@ div.star.star_hover {
 .pointer-box {
   cursor: pointer;
 }
+
+// Keyboard focus. css/global.css also limits its universal `outline: none` to mouse focus
+// (*:focus:not(:focus-visible)); keyboard focus gets a visible ring, #1d6fb8 is 5.23:1 on white.
+:focus-visible,
+.dropdown-toggle:focus-visible,
+.button.button-medium:focus-visible {
+  outline: 2px solid #1d6fb8;
+  outline-offset: 2px;
+}
+.header-container :focus-visible,
+.footer-container :focus-visible {
+  outline-color: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.55);
+}

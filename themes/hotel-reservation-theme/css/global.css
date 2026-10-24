@@ -230,7 +230,9 @@ table {
 *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  box-sizing: border-box; }
+
+*:focus:not(:focus-visible) {
   outline: none; }
 
 html {
@@ -8945,6 +8947,20 @@ body .ui-tooltip {
 
 .pointer-box {
   cursor: pointer; }
+
+/* Keyboard focus: a visible ring for keyboard users only (mouse clicks show none).
+   #1d6fb8 is 5.23:1 on white. The two compound selectors answer later `outline: 0` rules
+   (.dropdown-toggle:focus, .button.button-medium:focus). */
+:focus-visible,
+.dropdown-toggle:focus-visible,
+.button.button-medium:focus-visible {
+  outline: 2px solid #1d6fb8;
+  outline-offset: 2px; }
+
+.header-container :focus-visible,
+.footer-container :focus-visible {
+  outline-color: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.55); }
 
 /*# sourceMappingURL=global.css.map */
 
